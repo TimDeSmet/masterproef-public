@@ -1,0 +1,13 @@
+  
+apiVersion: v1
+kind: Service
+metadata:
+  name: log_service
+  labels:
+    app: log_service
+spec:
+  ports:
+  - port: 2002
+    targetPort: 2002
+  selector:
+    app: log_service

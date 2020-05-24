@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <div class="app-container">
+        <div>
+            <hr />
+            <div class="page-titles">
+                <h1 class="big-title">
+                    Micro Frontend
+                    <br />
+                    POC <span class="red version">LitElements</span>
+                </h1>
+                <h1 class="medium-title">
+                    delaware <span class="red">-</span> UGent
+                </h1>
+            </div>
+        </div>
+        <p class="landing-text">
+            This page uses no frameworks and includes the LitElement microfrontend. It was built to test the rendering performance of a LitElement optimized approach.
+        </p>
+        <p>
+            Click
+            <button id="target"> here </button>
+            to change the productlist that gets passed down.
+        </p>
+        <product-list expanding products='[]'></product-list> 
+        <img class="bg-image" src='assets/bg.png' alt="background hexagonal shapes"></img>
+    </div> 
+    <script type="module" src="index.js"></script>
+    <script type="text/javascript">
+        fetch('http://gateway:2003/products/performance')
+			.then((res) => res.json())
+			.then((body) => {
+                document.getElementsByTagName('product-list')[0].setAttribute('products', JSON.stringify(body))
+            })
+        
+        document.getElementById('target').addEventListener('click', (e) => {
+            let lister = document.getElementsByTagName('product-list')[0]
+            let updated = JSON.parse(lister.getAttribute('products'))
+            updated[5000].name = 'Random ' + Math.round(Math.random() * 100)
+            lister.setAttribute('products', JSON.stringify(updated))
+        })
+    </script>
+</body>
+</html>

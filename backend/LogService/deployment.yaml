@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: log_server
+  labels:
+    app: log_server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: log_server
+  template:
+    metadata:
+      labels:
+        app: log_server
+    spec:
+      containers:
+      - name: log_server
+        image: timdesmet/log_server_java:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 2002
+          name: log_server

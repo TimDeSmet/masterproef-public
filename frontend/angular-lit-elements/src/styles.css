@@ -1,0 +1,115 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+:root {
+    --primary: #E4453F;
+    --grey: #F5F5F5;
+  }
+  
+  body{
+    background-color: var(--grey);
+  }
+  
+  /* Landing page */
+  .app-container {
+    margin: 3rem 10%;
+  }
+  
+  .big-title{
+    font-size: 3rem;
+  }
+   
+  hr{
+    width: 3rem;
+    border: 1px solid var(--primary);
+    margin-left: 0;
+  }
+  
+  .page-titles{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+  }
+  
+  .page-titles > h1 {
+    margin-top: 0rem;
+  }
+  
+  .red {
+    color: var(--primary)
+  }
+  
+  .bg-image{
+    left:20%;
+    top: 1rem;
+    position:fixed;
+    z-index: -1;
+  }
+  
+  p, button {
+    font-size: 1.25rem;
+    font-weight: 300;
+  }
+  
+  .landing-text {
+    margin:1.5rem;
+  }
+  
+  a {
+    color: var(--primary);
+  }
+  
+  button {
+    text-decoration: underline;
+    color: var(--primary);
+    border: none;
+    background: none;
+  }
+  
+  button:focus {
+    outline:none;
+  }
+  
+  button:hover {
+    cursor: pointer;
+  }
+  
+  /* Product List*/
+  .product-list {
+    margin: 0 10%;
+    background-color: white;
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
+    overflow:auto;
+    margin-top:1rem;
+  }
+  
+  .product-list>h1 {
+    margin: 3rem;
+  }
+  
+  .products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 2rem 0rem;
+  }
+  
+  /*products*/
+  .product {
+    text-align: center;
+    margin: 1rem;
+    width: 25%;
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
+    padding: 10px;
+  }
+
+  .version {
+    font-size: 0.5em;
+  }

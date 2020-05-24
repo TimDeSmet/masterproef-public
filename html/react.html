@@ -1,0 +1,413 @@
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<meta name="theme-color" content="#000000" />
+		<meta name="description" content="Web site created using create-react-app" />
+		<base href="/" />
+		<link rel="apple-touch-icon" href="/logo192.png" />
+		<link rel="manifest" href="/manifest.json" />
+		<title>React App</title>
+		<link href="/static/css/main.309ef168.chunk.css" rel="stylesheet" />
+		<style type="text/css" id="e44cf803-9acb-4ff1-960f-6e189874256f">
+			.c4e6cc29-dc6c-42ed-a355-d99e21a52e77 {
+				position: relative !important;
+				border-radius: 0.2em !important;
+				padding: 0px !important;
+				margin: 0px !important;
+			}
+
+			.baaa1ba0-e93f-4de7-b74a-c12c9debb146 .ssh-close {
+				position: absolute;
+				left: -8px;
+				top: -8px;
+				width: 16px;
+				height: 16px;
+				z-index: 999;
+				border: none;
+				background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAKT2lDQ1BQaG90b3Nob3AgSUNDIHByb2ZpbGUAAHjanVNnVFPpFj333vRCS4iAlEtvUhUIIFJCi4AUkSYqIQkQSoghodkVUcERRUUEG8igiAOOjoCMFVEsDIoK2AfkIaKOg6OIisr74Xuja9a89+bN/rXXPues852zzwfACAyWSDNRNYAMqUIeEeCDx8TG4eQuQIEKJHAAEAizZCFz/SMBAPh+PDwrIsAHvgABeNMLCADATZvAMByH/w/qQplcAYCEAcB0kThLCIAUAEB6jkKmAEBGAYCdmCZTAKAEAGDLY2LjAFAtAGAnf+bTAICd+Jl7AQBblCEVAaCRACATZYhEAGg7AKzPVopFAFgwABRmS8Q5ANgtADBJV2ZIALC3AMDOEAuyAAgMADBRiIUpAAR7AGDIIyN4AISZABRG8lc88SuuEOcqAAB4mbI8uSQ5RYFbCC1xB1dXLh4ozkkXKxQ2YQJhmkAuwnmZGTKBNA/g88wAAKCRFRHgg/P9eM4Ors7ONo62Dl8t6r8G/yJiYuP+5c+rcEAAAOF0ftH+LC+zGoA7BoBt/qIl7gRoXgugdfeLZrIPQLUAoOnaV/Nw+H48PEWhkLnZ2eXk5NhKxEJbYcpXff5nwl/AV/1s+X48/Pf14L7iJIEyXYFHBPjgwsz0TKUcz5IJhGLc5o9H/LcL//wd0yLESWK5WCoU41EScY5EmozzMqUiiUKSKcUl0v9k4t8s+wM+3zUAsGo+AXuRLahdYwP2SycQWHTA4vcAAPK7b8HUKAgDgGiD4c93/+8//UegJQCAZkmScQAAXkQkLlTKsz/HCAAARKCBKrBBG/TBGCzABhzBBdzBC/xgNoRCJMTCQhBCCmSAHHJgKayCQiiGzbAdKmAv1EAdNMBRaIaTcA4uwlW4Dj1wD/phCJ7BKLyBCQRByAgTYSHaiAFiilgjjggXmYX4IcFIBBKLJCDJiBRRIkuRNUgxUopUIFVIHfI9cgI5h1xGupE7yAAygvyGvEcxlIGyUT3UDLVDuag3GoRGogvQZHQxmo8WoJvQcrQaPYw2oefQq2gP2o8+Q8cwwOgYBzPEbDAuxsNCsTgsCZNjy7EirAyrxhqwVqwDu4n1Y8+xdwQSgUXACTYEd0IgYR5BSFhMWE7YSKggHCQ0EdoJNwkDhFHCJyKTqEu0JroR+cQYYjIxh1hILCPWEo8TLxB7iEPENyQSiUMyJ7mQAkmxpFTSEtJG0m5SI+ksqZs0SBojk8naZGuyBzmULCAryIXkneTD5DPkG+Qh8lsKnWJAcaT4U+IoUspqShnlEOU05QZlmDJBVaOaUt2ooVQRNY9aQq2htlKvUYeoEzR1mjnNgxZJS6WtopXTGmgXaPdpr+h0uhHdlR5Ol9BX0svpR+iX6AP0dwwNhhWDx4hnKBmbGAcYZxl3GK+YTKYZ04sZx1QwNzHrmOeZD5lvVVgqtip8FZHKCpVKlSaVGyovVKmqpqreqgtV81XLVI+pXlN9rkZVM1PjqQnUlqtVqp1Q61MbU2epO6iHqmeob1Q/pH5Z/YkGWcNMw09DpFGgsV/jvMYgC2MZs3gsIWsNq4Z1gTXEJrHN2Xx2KruY/R27iz2qqaE5QzNKM1ezUvOUZj8H45hx+Jx0TgnnKKeX836K3hTvKeIpG6Y0TLkxZVxrqpaXllirSKtRq0frvTau7aedpr1Fu1n7gQ5Bx0onXCdHZ4/OBZ3nU9lT3acKpxZNPTr1ri6qa6UbobtEd79up+6Ynr5egJ5Mb6feeb3n+hx9L/1U/W36p/VHDFgGswwkBtsMzhg8xTVxbzwdL8fb8VFDXcNAQ6VhlWGX4YSRudE8o9VGjUYPjGnGXOMk423GbcajJgYmISZLTepN7ppSTbmmKaY7TDtMx83MzaLN1pk1mz0x1zLnm+eb15vft2BaeFostqi2uGVJsuRaplnutrxuhVo5WaVYVVpds0atna0l1rutu6cRp7lOk06rntZnw7Dxtsm2qbcZsOXYBtuutm22fWFnYhdnt8Wuw+6TvZN9un2N/T0HDYfZDqsdWh1+c7RyFDpWOt6azpzuP33F9JbpL2dYzxDP2DPjthPLKcRpnVOb00dnF2e5c4PziIuJS4LLLpc+Lpsbxt3IveRKdPVxXeF60vWdm7Obwu2o26/uNu5p7ofcn8w0nymeWTNz0MPIQ+BR5dE/C5+VMGvfrH5PQ0+BZ7XnIy9jL5FXrdewt6V3qvdh7xc+9j5yn+M+4zw33jLeWV/MN8C3yLfLT8Nvnl+F30N/I/9k/3r/0QCngCUBZwOJgUGBWwL7+Hp8Ib+OPzrbZfay2e1BjKC5QRVBj4KtguXBrSFoyOyQrSH355jOkc5pDoVQfujW0Adh5mGLw34MJ4WHhVeGP45wiFga0TGXNXfR3ENz30T6RJZE3ptnMU85ry1KNSo+qi5qPNo3ujS6P8YuZlnM1VidWElsSxw5LiquNm5svt/87fOH4p3iC+N7F5gvyF1weaHOwvSFpxapLhIsOpZATIhOOJTwQRAqqBaMJfITdyWOCnnCHcJnIi/RNtGI2ENcKh5O8kgqTXqS7JG8NXkkxTOlLOW5hCepkLxMDUzdmzqeFpp2IG0yPTq9MYOSkZBxQqohTZO2Z+pn5mZ2y6xlhbL+xW6Lty8elQfJa7OQrAVZLQq2QqboVFoo1yoHsmdlV2a/zYnKOZarnivN7cyzytuQN5zvn//tEsIS4ZK2pYZLVy0dWOa9rGo5sjxxedsK4xUFK4ZWBqw8uIq2Km3VT6vtV5eufr0mek1rgV7ByoLBtQFr6wtVCuWFfevc1+1dT1gvWd+1YfqGnRs+FYmKrhTbF5cVf9go3HjlG4dvyr+Z3JS0qavEuWTPZtJm6ebeLZ5bDpaql+aXDm4N2dq0Dd9WtO319kXbL5fNKNu7g7ZDuaO/PLi8ZafJzs07P1SkVPRU+lQ27tLdtWHX+G7R7ht7vPY07NXbW7z3/T7JvttVAVVN1WbVZftJ+7P3P66Jqun4lvttXa1ObXHtxwPSA/0HIw6217nU1R3SPVRSj9Yr60cOxx++/p3vdy0NNg1VjZzG4iNwRHnk6fcJ3/ceDTradox7rOEH0x92HWcdL2pCmvKaRptTmvtbYlu6T8w+0dbq3nr8R9sfD5w0PFl5SvNUyWna6YLTk2fyz4ydlZ19fi753GDborZ752PO32oPb++6EHTh0kX/i+c7vDvOXPK4dPKy2+UTV7hXmq86X23qdOo8/pPTT8e7nLuarrlca7nuer21e2b36RueN87d9L158Rb/1tWeOT3dvfN6b/fF9/XfFt1+cif9zsu72Xcn7q28T7xf9EDtQdlD3YfVP1v+3Njv3H9qwHeg89HcR/cGhYPP/pH1jw9DBY+Zj8uGDYbrnjg+OTniP3L96fynQ89kzyaeF/6i/suuFxYvfvjV69fO0ZjRoZfyl5O/bXyl/erA6xmv28bCxh6+yXgzMV70VvvtwXfcdx3vo98PT+R8IH8o/2j5sfVT0Kf7kxmTk/8EA5jz/GMzLdsAAAAgY0hSTQAAeiUAAICDAAD5/wAAgOkAAHUwAADqYAAAOpgAABdvkl/FRgAAAeBJREFUeNqMU01rGlEUPW9EUJeR2QyUcZ1uVLrr3zAbpdhfFWphVgUFR1ylNGR04qaIUBQXbaOmoOQHZObJW83H6UZfGq3gWb7LPe/ec88R2CGXyyFJEkRR9A7Ah2q1+t627TcAsNlsnqbT6XcAX7LZ7I98Po/tdguSOMR1s9nkZDJhkiTcI04STiYTNptNArgGACHEUfN9p9N5aYpjKqWolGIcx/q93W4TwP0hyeder8d/EQQBpZSUUjIIglc113UJoGUYBgDgstFo6KLjOPx2e0uSDMOQYRiSJMfjMX3fZ5qmJMl6vU4AlzAMozWfz/XYruvSNE2ORiNNOhgMaFkWfd9nFEUkyfl8TiHEJ5Qrld/75v1vA8+jaZp8/PPIxWLB4sUFPc/TU8U7gcvl8k/Urq6eSVIpRSmlJlktlyzZNu1SiavVSjdLKamUIknWarVnAycghECSJBAAMpkMTqJcqfw6XMG7u2OxWORyueTi4eGVJkcrCCG0iFEU0R8OaVkWB8Phi4g7Tfr9vvaEFhHA20ajTpJM05S+73M8Hh+d8evNDR3H0aT6jNpIrnu2kbrdLgG0DrU5aeXkDCvrMH3chSk+M0yaIp/PI47j/8Z5vV4/zWYzHedCoQApJUji7wAqNGpVYJkfGwAAAABJRU5ErkJggg==')
+					no-repeat border-box;
+				animation-duration: 275ms;
+				animation-timing-function: ease-out;
+				box-shadow: none;
+				animation-name: b84f1cae-66bc-43ad-95d1-0500b7a733c1;
+			}
+
+			.baaa1ba0-e93f-4de7-b74a-c12c9debb146 .ssh-close:hover,
+			.baaa1ba0-e93f-4de7-b74a-c12c9debb146 .ssh-close:focus {
+				background-image: url('data:image/png;base64,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');
+			}
+
+			@media print {
+				.baaa1ba0-e93f-4de7-b74a-c12c9debb146 {
+					box-shadow: unset !important;
+					-webkit-print-color-adjust: exact !important;
+				}
+			}
+
+			@keyframes b84f1cae-66bc-43ad-95d1-0500b7a733c1 {
+				0% {
+					opacity: 0;
+					transform: scale(0.6);
+				}
+				100% {
+					opacity: 1;
+					transform: scale(1);
+				}
+			}
+
+			@keyframes a5435928-b9dc-4487-828a-ffdc466b290d {
+				100% {
+					opacity: 0;
+					transform: scale(0.3);
+				}
+			}
+
+			.baaa1ba0-e93f-4de7-b74a-c12c9debb146 {
+				background-color: rgba(238, 238, 238, 0.8);
+				color: rgb(170, 170, 170);
+				font: inherit;
+				box-shadow: rgb(238, 238, 238) 0px 0px 0.35em;
+				text-shadow: none !important;
+			}
+
+			.default-red-aa94e3d5-ab2f-4205-b74e-18ce31c7c0ce {
+				box-shadow: rgb(255, 128, 128) 0px 0px 0.35em;
+				background-color: rgba(255, 128, 128, 0.8) !important;
+				color: rgb(0, 0, 0) !important;
+			}
+
+			.default-orange-da01945e-1964-4d27-8a6c-3331e1fe7f14 {
+				box-shadow: rgb(255, 210, 170) 0px 0px 0.35em;
+				background-color: rgba(255, 210, 170, 0.8) !important;
+				color: rgb(0, 0, 0) !important;
+			}
+
+			.default-yellow-aaddcf5c-0e41-4f83-8a64-58c91f7c6250 {
+				box-shadow: rgb(255, 255, 170) 0px 0px 0.35em;
+				background-color: rgba(255, 255, 170, 0.8) !important;
+				color: rgb(0, 0, 0) !important;
+			}
+
+			.default-green-c4d41e0a-e40f-4c3f-91ad-2d66481614c2 {
+				box-shadow: rgb(170, 255, 170) 0px 0px 0.35em;
+				background-color: rgba(170, 255, 170, 0.8) !important;
+				color: rgb(0, 0, 0) !important;
+			}
+
+			.default-cyan-f88e8827-e652-4d79-a9d9-f6c8b8ec9e2b {
+				box-shadow: rgb(170, 255, 255) 0px 0px 0.35em;
+				background-color: rgba(170, 255, 255, 0.8) !important;
+				color: rgb(0, 0, 0) !important;
+			}
+
+			.default-purple-c472dcdb-f2b8-41ab-bb1e-2fb293df172a {
+				box-shadow: rgb(255, 170, 255) 0px 0px 0.35em;
+				background-color: rgba(255, 170, 255, 0.8) !important;
+				color: rgb(0, 0, 0) !important;
+			}
+
+			.default-grey-da7cb902-89c6-46fe-b0e7-d3b35aaf237a {
+				box-shadow: rgb(119, 119, 119) 0px 0px 0.35em;
+				background-color: rgba(119, 119, 119, 0.8) !important;
+				color: rgb(255, 255, 255) !important;
+			}
+		</style>
+	</head>
+	<body>
+		<noscript>You need to enable JavaScript to run this app.</noscript>
+		<div id="root">
+			<div class="app-container">
+				<div>
+					<hr />
+					<div class="page-titles">
+						<h1 class="big-title">
+							Micro Frontend<br />POC
+							<span class="red version">React + LitElement</span>
+						</h1>
+						<h1 class="medium-title">delaware <span class="red">-</span> UGent</h1>
+					</div>
+				</div>
+				<p class="landing-text">
+					This app was created with <a href="https://reactjs.org/">React</a>. It acts as
+					the frontend container application that uses the micro frontend that was created
+					as a POC.
+				</p>
+				<p>Click <button>here</button> to communicate with the micro frontend.</p>
+				<p>Click <button>here</button> to change the productlist that gets passed down.</p>
+				<product-list
+					expanding="true"
+					products='[{"productId":"5eaeec2b603cb9007badf172","customerId":"00000000-0000-0000-0000-000000000000","name":"Black Watch","description":"Anybody interested in my black watch? Still in excellent condition!","price":177.4759636625002},{"productId":"5eaeec2b603cb9007badf173","customerId":"00000000-0000-0000-0000-000000000003","name":"White Plant","description":"Anybody interested in my white plant? Still in excellent condition!","price":129.43346674874073},{"productId":"5eaeec2b603cb9007badf174","customerId":"00000000-0000-0000-0000-000000000000","name":"White Radio","description":"Anybody interested in my white radio? Still in excellent condition!","price":134.29361283256532},{"productId":"5eaeec2b603cb9007badf175","customerId":"00000000-0000-0000-0000-000000000001","name":"Purple Plant","description":"Anybody interested in my purple plant? Still in excellent condition!","price":177.47467016318248},{"productId":"5eaeec2b603cb9007badf176","customerId":"00000000-0000-0000-0000-000000000001","name":"Yellow Watch","description":"Anybody interested in my yellow watch? Still in excellent condition!","price":120.60923501401567},{"productId":"5eaeec2b603cb9007badf177","customerId":"00000000-0000-0000-0000-000000000001","name":" Blue Bike","description":"Anybody interested in my  blue bike? Still in excellent condition!","price":189.03710011079232},{"productId":"5eaeec2b603cb9007badf178","customerId":"00000000-0000-0000-0000-000000000002","name":" Blue Bike","description":"Anybody interested in my  blue bike? Still in excellent condition!","price":188.27131444627878},{"productId":"5eaeec2b603cb9007badf179","customerId":"00000000-0000-0000-0000-000000000002","name":"White Bike","description":"Anybody interested in my white bike? Still in excellent condition!","price":183.85275138633452},{"productId":"5eaeec2b603cb9007badf17a","customerId":"00000000-0000-0000-0000-000000000000","name":"Yellow Plant","description":"Anybody interested in my yellow plant? Still in excellent condition!","price":105.06335583539908},{"productId":"5eaeec2b603cb9007badf17b","customerId":"00000000-0000-0000-0000-000000000000","name":"Yellow Painting","description":"Anybody interested in my yellow painting? Still in excellent condition!","price":127.75463424745203},{"productId":"5eaeec2b603cb9007badf17c","customerId":"00000000-0000-0000-0000-000000000001","name":"White Skateboard","description":"Anybody interested in my white skateboard? Still in excellent condition!","price":109.46063342510273},{"productId":"5eaeec2b603cb9007badf17d","customerId":"00000000-0000-0000-0000-000000000001","name":"Yellow Plant","description":"Anybody interested in my yellow plant? Still in excellent condition!","price":190.71060470992137},{"productId":"5eaeec2b603cb9007badf17e","customerId":"00000000-0000-0000-0000-000000000000","name":" Blue Guitar","description":"Anybody interested in my  blue guitar? Still in excellent condition!","price":110.05523922035195},{"productId":"5eaeec2b603cb9007badf17f","customerId":"00000000-0000-0000-0000-000000000002","name":"Yellow Plant","description":"Anybody interested in my yellow plant? Still in excellent condition!","price":172.1038851154974},{"productId":"5eaeec2b603cb9007badf180","customerId":"00000000-0000-0000-0000-000000000001","name":" Blue Skateboard","description":"Anybody interested in my  blue skateboard? Still in excellent condition!","price":143.48303558284078},{"productId":"5eaeec2b603cb9007badf181","customerId":"00000000-0000-0000-0000-000000000001","name":"Green Watch","description":"Anybody interested in my green watch? Still in excellent condition!","price":162.02559923488874},{"productId":"5eaeec2b603cb9007badf182","customerId":"00000000-0000-0000-0000-000000000002","name":"Purple Skateboard","description":"Anybody interested in my purple skateboard? Still in excellent condition!","price":130.9556741992189},{"productId":"5eaeec2b603cb9007badf183","customerId":"00000000-0000-0000-0000-000000000002","name":" Blue Guitar","description":"Anybody interested in my  blue guitar? Still in excellent condition!","price":128.92655526526124},{"productId":"5eaeec2b603cb9007badf184","customerId":"00000000-0000-0000-0000-000000000001","name":"Red Skateboard","description":"Anybody interested in my red skateboard? Still in excellent condition!","price":115.3953540571329},{"productId":"5eaeec2b603cb9007badf185","customerId":"00000000-0000-0000-0000-000000000001","name":"Black Radio","description":"Anybody interested in my black radio? Still in excellent condition!","price":111.18263007652335},{"productId":"5eaeec2b603cb9007badf186","customerId":"00000000-0000-0000-0000-000000000000","name":"Black Watch","description":"Anybody interested in my black watch? Still in excellent condition!","price":118.6895285671311},{"productId":"5eaeec2b603cb9007badf187","customerId":"00000000-0000-0000-0000-000000000001","name":"Green Bike","description":"Anybody interested in my green bike? Still in excellent condition!","price":142.96011261806802},{"productId":"5eaeec2b603cb9007badf188","customerId":"00000000-0000-0000-0000-000000000001","name":"White Watch","description":"Anybody interested in my white watch? Still in excellent condition!","price":131.7273184586998},{"productId":"5eaeec2b603cb9007badf189","customerId":"00000000-0000-0000-0000-000000000003","name":"Yellow Radio","description":"Anybody interested in my yellow radio? Still in excellent condition!","price":163.22434888506686},{"productId":"5eaeec2b603cb9007badf18a","customerId":"00000000-0000-0000-0000-000000000002","name":" Blue Painting","description":"Anybody interested in my  blue painting? Still in excellent condition!","price":138.64887997130506},{"productId":"5eaeec2b603cb9007badf18b","customerId":"00000000-0000-0000-0000-000000000003","name":"Purple Plant","description":"Anybody interested in my purple plant? Still in excellent condition!","price":140.81715917360407},{"productId":"5eaeec2b603cb9007badf18c","customerId":"00000000-0000-0000-0000-000000000000","name":"Green Guitar","description":"Anybody interested in my green guitar? Still in excellent condition!","price":181.13357212838315},{"productId":"5eaeec2b603cb9007badf18d","customerId":"00000000-0000-0000-0000-000000000003","name":"Red Plant","description":"Anybody interested in my red plant? Still in excellent condition!","price":198.23542929030992},{"productId":"5eaeec2b603cb9007badf18e","customerId":"00000000-0000-0000-0000-000000000003","name":"Red Radio","description":"Anybody interested in my red radio? Still in excellent condition!","price":188.57221367436196},{"productId":"5eaeec2b603cb9007badf18f","customerId":"00000000-0000-0000-0000-000000000001","name":"Red Bike","description":"Anybody interested in my red bike? Still in excellent condition!","price":132.0753760031559},{"productId":"5eaeec2b603cb9007badf190","customerId":"00000000-0000-0000-0000-000000000002","name":"Purple Plant","description":"Anybody interested in my purple plant? Still in excellent condition!","price":135.6133399469706},{"productId":"5eaeec2b603cb9007badf191","customerId":"00000000-0000-0000-0000-000000000003","name":"Green Skateboard","description":"Anybody interested in my green skateboard? Still in excellent condition!","price":109.0639940454997},{"productId":"5eaeec2b603cb9007badf192","customerId":"00000000-0000-0000-0000-000000000002","name":" Blue Painting","description":"Anybody interested in my  blue painting? Still in excellent condition!","price":139.842821312715},{"productId":"5eaeec2b603cb9007badf193","customerId":"00000000-0000-0000-0000-000000000001","name":"Purple Guitar","description":"Anybody interested in my purple guitar? Still in excellent condition!","price":163.1812057629848},{"productId":"5eaeec2b603cb9007badf194","customerId":"00000000-0000-0000-0000-000000000001","name":"Red Watch","description":"Anybody interested in my red watch? Still in excellent condition!","price":179.25082010835527},{"productId":"5eaeec2b603cb9007badf195","customerId":"00000000-0000-0000-0000-000000000002","name":"Red Guitar","description":"Anybody interested in my red guitar? Still in excellent condition!","price":131.58332207772685},{"productId":"5eaeec2b603cb9007badf196","customerId":"00000000-0000-0000-0000-000000000001","name":" Blue Bike","description":"Anybody interested in my  blue bike? Still in excellent condition!","price":191.65949361834817},{"productId":"5eaeec2b603cb9007badf197","customerId":"00000000-0000-0000-0000-000000000001","name":" Blue Plant","description":"Anybody interested in my  blue plant? Still in excellent condition!","price":144.87037025964366},{"productId":"5eaeec2b603cb9007badf198","customerId":"00000000-0000-0000-0000-000000000001","name":"White Watch","description":"Anybody interested in my white watch? Still in excellent condition!","price":116.42947943735344},{"productId":"5eaeec2b603cb9007badf199","customerId":"00000000-0000-0000-0000-000000000001","name":"Purple Skateboard","description":"Anybody interested in my purple skateboard? Still in excellent condition!","price":130.69696445530013},{"productId":"5eaeec2b603cb9007badf19a","customerId":"00000000-0000-0000-0000-000000000000","name":"White Plant","description":"Anybody interested in my white plant? Still in excellent condition!","price":152.53267197041365},{"productId":"5eaeec2b603cb9007badf19b","customerId":"00000000-0000-0000-0000-000000000001","name":"Purple Skateboard","description":"Anybody interested in my purple skateboard? Still in excellent condition!","price":198.80835971458794},{"productId":"5eaeec2b603cb9007badf19c","customerId":"00000000-0000-0000-0000-000000000001","name":"Red Radio","description":"Anybody interested in my red radio? Still in excellent condition!","price":136.47333236825324},{"productId":"5eaeec2b603cb9007badf19d","customerId":"00000000-0000-0000-0000-000000000000","name":" Blue Plant","description":"Anybody interested in my  blue plant? Still in excellent condition!","price":150.29038971444834},{"productId":"5eaeec2b603cb9007badf19e","customerId":"00000000-0000-0000-0000-000000000001","name":"Purple Painting","description":"Anybody interested in my purple painting? Still in excellent condition!","price":188.55915249003039},{"productId":"5eaeec2b603cb9007badf19f","customerId":"00000000-0000-0000-0000-000000000002","name":" Blue Painting","description":"Anybody interested in my  blue painting? Still in excellent condition!","price":194.15402478749863},{"productId":"5eaeec2b603cb9007badf1a0","customerId":"00000000-0000-0000-0000-000000000000","name":"White Watch","description":"Anybody interested in my white watch? Still in excellent condition!","price":136.66835261803743},{"productId":"5eaeec2b603cb9007badf1a1","customerId":"00000000-0000-0000-0000-000000000003","name":"Yellow Bike","description":"Anybody interested in my yellow bike? Still in excellent condition!","price":160.3322927712642},{"productId":"5eaeec2b603cb9007badf1a2","customerId":"00000000-0000-0000-0000-000000000002","name":" Blue Watch","description":"Anybody interested in my  blue watch? Still in excellent condition!","price":102.92848593802671},{"productId":"5eaeec2b603cb9007badf1a3","customerId":"00000000-0000-0000-0000-000000000002","name":"White Watch","description":"Anybody interested in my white watch? Still in excellent condition!","price":169.74937894840622}]'
+				>
+					<!---->
+					<style>
+						p,
+						button {
+							font-size: 1.25rem;
+							font-weight: 300;
+						}
+
+						button {
+							text-decoration: underline;
+							color: var(--primary);
+							border: none;
+						}
+
+						button:focus {
+							outline: none;
+						}
+
+						button:hover {
+							cursor: pointer;
+						}
+
+						.product-list {
+							margin: 0 10%;
+							background-color: white;
+							box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+							overflow: auto;
+							margin-top: 1rem;
+							padding: 3rem;
+						}
+
+						.product-list > h1 {
+							margin: 3rem 0rem;
+						}
+
+						#products {
+							display: flex;
+							flex-wrap: wrap;
+							justify-content: space-evenly;
+						}
+
+						product-element {
+							width: 30%;
+							margin: 1rem 0;
+							box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+						}
+
+						.header {
+							display: flex;
+							justify-content: space-between;
+						}
+
+						.credit {
+							font-size: 0.7rem;
+						}
+					</style>
+
+					<div class="product-list">
+						<div class="header">
+							<h1>This list contains all products:</h1>
+							<button>
+								Expand list
+							</button>
+						</div>
+						<p id="responder"><!----><!----></p>
+						<p></p>
+						<p>Click <button>here</button> to communicate with the micro frontend.</p>
+
+						<div id="products">
+							<!---->
+							<product-element alt="Image of a Black Watch">
+								<!---->
+								<style>
+									.mf-poc-product {
+										text-align: center;
+										padding: 10px;
+									}
+									.mf-poc-product-image {
+										width: 45%;
+										margin-top: 2rem;
+									}
+								</style>
+								<div class="mf-poc-product">
+									<img
+										class="mf-poc-product-image"
+										src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiIgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiPjx0aXRsZT5Db21tZXJjaWFsIGRlbGl2ZXJ5IDwvdGl0bGU+PHBhdGggZD0iTTQ3Mi45MTYsMjI0SDQ0OC4wMDdhMjQuNTM0LDI0LjUzNCwwLDAsMC0yMy40MTctMThIMzk4VjE0MC45NzZhNi44Niw2Ljg2LDAsMCwwLTMuMzQ2LTYuMDYyTDIwNy4wNzcsMjYuNTcyYTYuOTI3LDYuOTI3LDAsMCwwLTYuOTYyLDBMMTIuNDgsMTM0LjkxNEE2Ljk4MSw2Ljk4MSwwLDAsMCw5LDE0MC45NzZWMzU3LjY2MWE3LDcsMCwwLDAsMy41LDYuMDYyTDIwMC4xNTQsNDcyLjA2NWE3LDcsMCwwLDAsMy41LjkzOCw3LjM2MSw3LjM2MSwwLDAsMCwzLjYtLjkzOEwzMDYsNDE1LjEwOHY0MS4xNzRBMjkuNjQyLDI5LjY0MiwwLDAsMCwzMzUuODkxLDQ4Nkg0NzIuOTE2QTI5LjgwNywyOS44MDcsMCwwLDAsNTAzLDQ1Ni4yODJ2LTIwMi4xQTMwLjIsMzAuMiwwLDAsMCw0NzIuOTE2LDIyNFptLTQ4LjA3Ny00QTEwLjE2MSwxMC4xNjEsMCwwLDEsNDM1LDIzMC4xNjF2LjY3OEExMC4xNjEsMTAuMTYxLDAsMCwxLDQyNC44MzksMjQxSDM4NC4xNjFBMTAuMTYxLDEwLjE2MSwwLDAsMSwzNzQsMjMwLjgzOXYtLjY3OEExMC4xNjEsMTAuMTYxLDAsMCwxLDM4NC4xNjEsMjIwWk0yMDMuNjU0LDQwLjcxN2w3Ny45NzQsNDUuMDE4TDEwNy45ODYsMTg1Ljk4NywzMC4wMTMsMTQwLjk2OVpNMTk3LDQ1My44NzgsMjMsMzUzLjYxOVYxNTMuMDg1TDE5NywyNTMuMzQ0Wm02LjY1NC0yMTIuNjU4LTgxLjY2OC00Ny4xNTFMMjk1LjYyOCw5My44MTgsMzc3LjMsMTQwLjk2OVpNMzA2LDI1NC4xODJWMzk4Ljk0M2wtOTUsNTQuOTM1VjI1My4zNDRMMzg0LDE1My4wODVWMjA2aC4yMTdBMjQuNTMzLDI0LjUzMywwLDAsMCwzNjAuOCwyMjRIMzM1Ljg5MUEzMC4wMzcsMzAuMDM3LDAsMCwwLDMwNiwyNTQuMTgyWm0xODMsMjAyLjFBMTUuNzkzLDE1Ljc5MywwLDAsMSw0NzIuOTE2LDQ3MkgzMzUuODkxQTE1LjYyOCwxNS42MjgsMCwwLDEsMzIwLDQ1Ni4yODJ2LTIwMi4xQTE2LjAyMiwxNi4wMjIsMCwwLDEsMzM1Ljg5MSwyMzhoMjUuMTgyYTIzLjk0NCwyMy45NDQsMCwwLDAsMjMuMTQ0LDE3SDQyNC41OWEyMy45NDIsMjMuOTQyLDAsMCwwLDIzLjE0My0xN2gyNS4xODNBMTYuMTg2LDE2LjE4NiwwLDAsMSw0ODksMjU0LjE4MloiLz48cGF0aCBkPSJNMzQzLjk0OSwzMjVoNy4zMjdhNyw3LDAsMSwwLDAtMTRIMzUxVjI5MmgxOS4zMDdhNi43MzksNi43MzksMCwwLDAsNi42NTUsNC43MjdBNy4wMTksNy4wMTksMCwwLDAsMzg0LDI4OS43NDN2LTQuNzFBNy4wOTMsNy4wOTMsMCwwLDAsMzc2LjkyNCwyNzhIMzQzLjk0OUE2Ljk4NSw2Ljk4NSwwLDAsMCwzMzcsMjg1LjAzM3YzMi45NzVBNi45NSw2Ljk1LDAsMCwwLDM0My45NDksMzI1WiIvPjxwYXRoIGQ9Ik0zNDQsMzg5aDMzYTcsNywwLDAsMCw3LTdWMzQ5YTcsNywwLDAsMC03LTdIMzQ0YTcsNywwLDAsMC03LDd2MzNBNyw3LDAsMCwwLDM0NCwzODlabTctMzNoMTl2MTlIMzUxWiIvPjxwYXRoIGQ9Ik0zNTEuMjc3LDQzOUgzNTFWNDIwaDE4LjkyOWE3LjAzNyw3LjAzNywwLDAsMCwxNC4wNzEuMDE0di02Ljc0NUE3LjMsNy4zLDAsMCwwLDM3Ni45MjQsNDA2SDM0My45NDlBNy4xOTEsNy4xOTEsMCwwLDAsMzM3LDQxMy4yNjl2MzIuOTc1QTYuNzUyLDYuNzUyLDAsMCwwLDM0My45NDksNDUzaDcuMzI4YTcsNywwLDEsMCwwLTE0WiIvPjxwYXRoIGQ9Ik0zOTMuMDQxLDI4Ni41OTJsLTIwLjUsMjAuNS02LjIzNi02LjIzN2E3LDcsMCwxLDAtOS45LDkuOWwxMS4xODcsMTEuMTg2YTcsNywwLDAsMCw5LjksMGwyNS40NTItMjUuNDUyYTcsNywwLDAsMC05LjktOS45WiIvPjxwYXRoIGQ9Ik0zOTMuMDQxLDQxNS44NDFsLTIwLjUsMjAuNS02LjIzNi02LjIzN2E3LDcsMCwxLDAtOS45LDkuOWwxMS4xODcsMTEuMTg2YTcsNywwLDAsMCw5LjksMGwyNS40NTItMjUuNDUyYTcsNywwLDAsMC05LjktOS45WiIvPjxwYXRoIGQ9Ik00NjQuODU3LDI5NUg0MjAuODkxYTcsNywwLDAsMCwwLDE0aDQzLjk2NmE3LDcsMCwwLDAsMC0xNFoiLz48cGF0aCBkPSJNNDY0Ljg1NywzNTlINDIwLjg5MWE3LDcsMCwwLDAsMCwxNGg0My45NjZhNyw3LDAsMCwwLDAtMTRaIi8+PHBhdGggZD0iTTQ2NC44NTcsNDIzSDQyMC44OTFhNyw3LDAsMCwwLDAsMTRoNDMuOTY2YTcsNywwLDAsMCwwLTE0WiIvPjwvc3ZnPgo="
+										alt="Image of a Black Watch"
+									/>
+									<h1><slot name="name">Default Name</slot></h1>
+									<p><slot name="description">Default Description</slot></p>
+									<p>€ <slot name="price">Default Price</slot></p>
+								</div>
+								<!---->
+								<span slot="name"><!---->Black Watch<!----></span>
+								<span slot="description"
+									><!---->Anybody interested in my black watch? Still in excellent
+									condition!<!----></span
+								>
+								<span slot="price"><!---->177.48<!----></span>
+							</product-element>
+							<!---->
+							<product-element alt="Image of a White Plant">
+								<!---->
+								<style>
+									.mf-poc-product {
+										text-align: center;
+										padding: 10px;
+									}
+									.mf-poc-product-image {
+										width: 45%;
+										margin-top: 2rem;
+									}
+								</style>
+								<div class="mf-poc-product">
+									<img
+										class="mf-poc-product-image"
+										src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiIgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiPjx0aXRsZT5Db21tZXJjaWFsIGRlbGl2ZXJ5IDwvdGl0bGU+PHBhdGggZD0iTTQ3Mi45MTYsMjI0SDQ0OC4wMDdhMjQuNTM0LDI0LjUzNCwwLDAsMC0yMy40MTctMThIMzk4VjE0MC45NzZhNi44Niw2Ljg2LDAsMCwwLTMuMzQ2LTYuMDYyTDIwNy4wNzcsMjYuNTcyYTYuOTI3LDYuOTI3LDAsMCwwLTYuOTYyLDBMMTIuNDgsMTM0LjkxNEE2Ljk4MSw2Ljk4MSwwLDAsMCw5LDE0MC45NzZWMzU3LjY2MWE3LDcsMCwwLDAsMy41LDYuMDYyTDIwMC4xNTQsNDcyLjA2NWE3LDcsMCwwLDAsMy41LjkzOCw3LjM2MSw3LjM2MSwwLDAsMCwzLjYtLjkzOEwzMDYsNDE1LjEwOHY0MS4xNzRBMjkuNjQyLDI5LjY0MiwwLDAsMCwzMzUuODkxLDQ4Nkg0NzIuOTE2QTI5LjgwNywyOS44MDcsMCwwLDAsNTAzLDQ1Ni4yODJ2LTIwMi4xQTMwLjIsMzAuMiwwLDAsMCw0NzIuOTE2LDIyNFptLTQ4LjA3Ny00QTEwLjE2MSwxMC4xNjEsMCwwLDEsNDM1LDIzMC4xNjF2LjY3OEExMC4xNjEsMTAuMTYxLDAsMCwxLDQyNC44MzksMjQxSDM4NC4xNjFBMTAuMTYxLDEwLjE2MSwwLDAsMSwzNzQsMjMwLjgzOXYtLjY3OEExMC4xNjEsMTAuMTYxLDAsMCwxLDM4NC4xNjEsMjIwWk0yMDMuNjU0LDQwLjcxN2w3Ny45NzQsNDUuMDE4TDEwNy45ODYsMTg1Ljk4NywzMC4wMTMsMTQwLjk2OVpNMTk3LDQ1My44NzgsMjMsMzUzLjYxOVYxNTMuMDg1TDE5NywyNTMuMzQ0Wm02LjY1NC0yMTIuNjU4LTgxLjY2OC00Ny4xNTFMMjk1LjYyOCw5My44MTgsMzc3LjMsMTQwLjk2OVpNMzA2LDI1NC4xODJWMzk4Ljk0M2wtOTUsNTQuOTM1VjI1My4zNDRMMzg0LDE1My4wODVWMjA2aC4yMTdBMjQuNTMzLDI0LjUzMywwLDAsMCwzNjAuOCwyMjRIMzM1Ljg5MUEzMC4wMzcsMzAuMDM3LDAsMCwwLDMwNiwyNTQuMTgyWm0xODMsMjAyLjFBMTUuNzkzLDE1Ljc5MywwLDAsMSw0NzIuOTE2LDQ3MkgzMzUuODkxQTE1LjYyOCwxNS42MjgsMCwwLDEsMzIwLDQ1Ni4yODJ2LTIwMi4xQTE2LjAyMiwxNi4wMjIsMCwwLDEsMzM1Ljg5MSwyMzhoMjUuMTgyYTIzLjk0NCwyMy45NDQsMCwwLDAsMjMuMTQ0LDE3SDQyNC41OWEyMy45NDIsMjMuOTQyLDAsMCwwLDIzLjE0My0xN2gyNS4xODNBMTYuMTg2LDE2LjE4NiwwLDAsMSw0ODksMjU0LjE4MloiLz48cGF0aCBkPSJNMzQzLjk0OSwzMjVoNy4zMjdhNyw3LDAsMSwwLDAtMTRIMzUxVjI5MmgxOS4zMDdhNi43MzksNi43MzksMCwwLDAsNi42NTUsNC43MjdBNy4wMTksNy4wMTksMCwwLDAsMzg0LDI4OS43NDN2LTQuNzFBNy4wOTMsNy4wOTMsMCwwLDAsMzc2LjkyNCwyNzhIMzQzLjk0OUE2Ljk4NSw2Ljk4NSwwLDAsMCwzMzcsMjg1LjAzM3YzMi45NzVBNi45NSw2Ljk1LDAsMCwwLDM0My45NDksMzI1WiIvPjxwYXRoIGQ9Ik0zNDQsMzg5aDMzYTcsNywwLDAsMCw3LTdWMzQ5YTcsNywwLDAsMC03LTdIMzQ0YTcsNywwLDAsMC03LDd2MzNBNyw3LDAsMCwwLDM0NCwzODlabTctMzNoMTl2MTlIMzUxWiIvPjxwYXRoIGQ9Ik0zNTEuMjc3LDQzOUgzNTFWNDIwaDE4LjkyOWE3LjAzNyw3LjAzNywwLDAsMCwxNC4wNzEuMDE0di02Ljc0NUE3LjMsNy4zLDAsMCwwLDM3Ni45MjQsNDA2SDM0My45NDlBNy4xOTEsNy4xOTEsMCwwLDAsMzM3LDQxMy4yNjl2MzIuOTc1QTYuNzUyLDYuNzUyLDAsMCwwLDM0My45NDksNDUzaDcuMzI4YTcsNywwLDEsMCwwLTE0WiIvPjxwYXRoIGQ9Ik0zOTMuMDQxLDI4Ni41OTJsLTIwLjUsMjAuNS02LjIzNi02LjIzN2E3LDcsMCwxLDAtOS45LDkuOWwxMS4xODcsMTEuMTg2YTcsNywwLDAsMCw5LjksMGwyNS40NTItMjUuNDUyYTcsNywwLDAsMC05LjktOS45WiIvPjxwYXRoIGQ9Ik0zOTMuMDQxLDQxNS44NDFsLTIwLjUsMjAuNS02LjIzNi02LjIzN2E3LDcsMCwxLDAtOS45LDkuOWwxMS4xODcsMTEuMTg2YTcsNywwLDAsMCw5LjksMGwyNS40NTItMjUuNDUyYTcsNywwLDAsMC05LjktOS45WiIvPjxwYXRoIGQ9Ik00NjQuODU3LDI5NUg0MjAuODkxYTcsNywwLDAsMCwwLDE0aDQzLjk2NmE3LDcsMCwwLDAsMC0xNFoiLz48cGF0aCBkPSJNNDY0Ljg1NywzNTlINDIwLjg5MWE3LDcsMCwwLDAsMCwxNGg0My45NjZhNyw3LDAsMCwwLDAtMTRaIi8+PHBhdGggZD0iTTQ2NC44NTcsNDIzSDQyMC44OTFhNyw3LDAsMCwwLDAsMTRoNDMuOTY2YTcsNywwLDAsMCwwLTE0WiIvPjwvc3ZnPgo="
+										alt="Image of a White Plant"
+									/>
+									<h1><slot name="name">Default Name</slot></h1>
+									<p><slot name="description">Default Description</slot></p>
+									<p>€ <slot name="price">Default Price</slot></p>
+								</div>
+								<!---->
+								<span slot="name"><!---->White Plant<!----></span>
+								<span slot="description"
+									><!---->Anybody interested in my white plant? Still in excellent
+									condition!<!----></span
+								>
+								<span slot="price"><!---->129.43<!----></span>
+							</product-element>
+							<!---->
+							<product-element alt="Image of a White Radio">
+								<!---->
+								<style>
+									.mf-poc-product {
+										text-align: center;
+										padding: 10px;
+									}
+									.mf-poc-product-image {
+										width: 45%;
+										margin-top: 2rem;
+									}
+								</style>
+								<div class="mf-poc-product">
+									<img
+										class="mf-poc-product-image"
+										src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiIgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiPjx0aXRsZT5Db21tZXJjaWFsIGRlbGl2ZXJ5IDwvdGl0bGU+PHBhdGggZD0iTTQ3Mi45MTYsMjI0SDQ0OC4wMDdhMjQuNTM0LDI0LjUzNCwwLDAsMC0yMy40MTctMThIMzk4VjE0MC45NzZhNi44Niw2Ljg2LDAsMCwwLTMuMzQ2LTYuMDYyTDIwNy4wNzcsMjYuNTcyYTYuOTI3LDYuOTI3LDAsMCwwLTYuOTYyLDBMMTIuNDgsMTM0LjkxNEE2Ljk4MSw2Ljk4MSwwLDAsMCw5LDE0MC45NzZWMzU3LjY2MWE3LDcsMCwwLDAsMy41LDYuMDYyTDIwMC4xNTQsNDcyLjA2NWE3LDcsMCwwLDAsMy41LjkzOCw3LjM2MSw3LjM2MSwwLDAsMCwzLjYtLjkzOEwzMDYsNDE1LjEwOHY0MS4xNzRBMjkuNjQyLDI5LjY0MiwwLDAsMCwzMzUuODkxLDQ4Nkg0NzIuOTE2QTI5LjgwNywyOS44MDcsMCwwLDAsNTAzLDQ1Ni4yODJ2LTIwMi4xQTMwLjIsMzAuMiwwLDAsMCw0NzIuOTE2LDIyNFptLTQ4LjA3Ny00QTEwLjE2MSwxMC4xNjEsMCwwLDEsNDM1LDIzMC4xNjF2LjY3OEExMC4xNjEsMTAuMTYxLDAsMCwxLDQyNC44MzksMjQxSDM4NC4xNjFBMTAuMTYxLDEwLjE2MSwwLDAsMSwzNzQsMjMwLjgzOXYtLjY3OEExMC4xNjEsMTAuMTYxLDAsMCwxLDM4NC4xNjEsMjIwWk0yMDMuNjU0LDQwLjcxN2w3Ny45NzQsNDUuMDE4TDEwNy45ODYsMTg1Ljk4NywzMC4wMTMsMTQwLjk2OVpNMTk3LDQ1My44NzgsMjMsMzUzLjYxOVYxNTMuMDg1TDE5NywyNTMuMzQ0Wm02LjY1NC0yMTIuNjU4LTgxLjY2OC00Ny4xNTFMMjk1LjYyOCw5My44MTgsMzc3LjMsMTQwLjk2OVpNMzA2LDI1NC4xODJWMzk4Ljk0M2wtOTUsNTQuOTM1VjI1My4zNDRMMzg0LDE1My4wODVWMjA2aC4yMTdBMjQuNTMzLDI0LjUzMywwLDAsMCwzNjAuOCwyMjRIMzM1Ljg5MUEzMC4wMzcsMzAuMDM3LDAsMCwwLDMwNiwyNTQuMTgyWm0xODMsMjAyLjFBMTUuNzkzLDE1Ljc5MywwLDAsMSw0NzIuOTE2LDQ3MkgzMzUuODkxQTE1LjYyOCwxNS42MjgsMCwwLDEsMzIwLDQ1Ni4yODJ2LTIwMi4xQTE2LjAyMiwxNi4wMjIsMCwwLDEsMzM1Ljg5MSwyMzhoMjUuMTgyYTIzLjk0NCwyMy45NDQsMCwwLDAsMjMuMTQ0LDE3SDQyNC41OWEyMy45NDIsMjMuOTQyLDAsMCwwLDIzLjE0My0xN2gyNS4xODNBMTYuMTg2LDE2LjE4NiwwLDAsMSw0ODksMjU0LjE4MloiLz48cGF0aCBkPSJNMzQzLjk0OSwzMjVoNy4zMjdhNyw3LDAsMSwwLDAtMTRIMzUxVjI5MmgxOS4zMDdhNi43MzksNi43MzksMCwwLDAsNi42NTUsNC43MjdBNy4wMTksNy4wMTksMCwwLDAsMzg0LDI4OS43NDN2LTQuNzFBNy4wOTMsNy4wOTMsMCwwLDAsMzc2LjkyNCwyNzhIMzQzLjk0OUE2Ljk4NSw2Ljk4NSwwLDAsMCwzMzcsMjg1LjAzM3YzMi45NzVBNi45NSw2Ljk1LDAsMCwwLDM0My45NDksMzI1WiIvPjxwYXRoIGQ9Ik0zNDQsMzg5aDMzYTcsNywwLDAsMCw3LTdWMzQ5YTcsNywwLDAsMC03LTdIMzQ0YTcsNywwLDAsMC03LDd2MzNBNyw3LDAsMCwwLDM0NCwzODlabTctMzNoMTl2MTlIMzUxWiIvPjxwYXRoIGQ9Ik0zNTEuMjc3LDQzOUgzNTFWNDIwaDE4LjkyOWE3LjAzNyw3LjAzNywwLDAsMCwxNC4wNzEuMDE0di02Ljc0NUE3LjMsNy4zLDAsMCwwLDM3Ni45MjQsNDA2SDM0My45NDlBNy4xOTEsNy4xOTEsMCwwLDAsMzM3LDQxMy4yNjl2MzIuOTc1QTYuNzUyLDYuNzUyLDAsMCwwLDM0My45NDksNDUzaDcuMzI4YTcsNywwLDEsMCwwLTE0WiIvPjxwYXRoIGQ9Ik0zOTMuMDQxLDI4Ni41OTJsLTIwLjUsMjAuNS02LjIzNi02LjIzN2E3LDcsMCwxLDAtOS45LDkuOWwxMS4xODcsMTEuMTg2YTcsNywwLDAsMCw5LjksMGwyNS40NTItMjUuNDUyYTcsNywwLDAsMC05LjktOS45WiIvPjxwYXRoIGQ9Ik0zOTMuMDQxLDQxNS44NDFsLTIwLjUsMjAuNS02LjIzNi02LjIzN2E3LDcsMCwxLDAtOS45LDkuOWwxMS4xODcsMTEuMTg2YTcsNywwLDAsMCw5LjksMGwyNS40NTItMjUuNDUyYTcsNywwLDAsMC05LjktOS45WiIvPjxwYXRoIGQ9Ik00NjQuODU3LDI5NUg0MjAuODkxYTcsNywwLDAsMCwwLDE0aDQzLjk2NmE3LDcsMCwwLDAsMC0xNFoiLz48cGF0aCBkPSJNNDY0Ljg1NywzNTlINDIwLjg5MWE3LDcsMCwwLDAsMCwxNGg0My45NjZhNyw3LDAsMCwwLDAtMTRaIi8+PHBhdGggZD0iTTQ2NC44NTcsNDIzSDQyMC44OTFhNyw3LDAsMCwwLDAsMTRoNDMuOTY2YTcsNywwLDAsMCwwLTE0WiIvPjwvc3ZnPgo="
+										alt="Image of a White Radio"
+									/>
+									<h1><slot name="name">Default Name</slot></h1>
+									<p><slot name="description">Default Description</slot></p>
+									<p>€ <slot name="price">Default Price</slot></p>
+								</div>
+								<!---->
+								<span slot="name"><!---->White Radio<!----></span>
+								<span slot="description"
+									><!---->Anybody interested in my white radio? Still in excellent
+									condition!<!----></span
+								>
+								<span slot="price"><!---->134.29<!----></span>
+							</product-element>
+							<!---->
+						</div>
+
+						<p class="credit">
+							Icons made by
+							<a href="https://www.flaticon.com/authors/icongeek26" title="Icongeek26"
+								>Icongeek26</a
+							>
+							from
+							<a href="https://www.flaticon.com/" title="Flaticon"
+								>www.flaticon.com</a
+							>
+						</p>
+					</div>
+					<!----> </product-list
+				><img
+					class="bg-image"
+					src="/static/media/bg.10f4ff68.png"
+					alt="background hexagonal shapes"
+				/>
+			</div>
+		</div>
+		<script>
+			!(function (e) {
+				function t(t) {
+					for (var n, l, i = t[0], a = t[1], f = t[2], p = 0, s = []; p < i.length; p++)
+						(l = i[p]),
+							Object.prototype.hasOwnProperty.call(o, l) && o[l] && s.push(o[l][0]),
+							(o[l] = 0)
+					for (n in a) Object.prototype.hasOwnProperty.call(a, n) && (e[n] = a[n])
+					for (c && c(t); s.length; ) s.shift()()
+					return u.push.apply(u, f || []), r()
+				}
+				function r() {
+					for (var e, t = 0; t < u.length; t++) {
+						for (var r = u[t], n = !0, i = 1; i < r.length; i++) {
+							var a = r[i]
+							0 !== o[a] && (n = !1)
+						}
+						n && (u.splice(t--, 1), (e = l((l.s = r[0]))))
+					}
+					return e
+				}
+				var n = {},
+					o = { 1: 0 },
+					u = []
+				function l(t) {
+					if (n[t]) return n[t].exports
+					var r = (n[t] = { i: t, l: !1, exports: {} })
+					return e[t].call(r.exports, r, r.exports, l), (r.l = !0), r.exports
+				}
+				;(l.m = e),
+					(l.c = n),
+					(l.d = function (e, t, r) {
+						l.o(e, t) || Object.defineProperty(e, t, { enumerable: !0, get: r })
+					}),
+					(l.r = function (e) {
+						'undefined' != typeof Symbol &&
+							Symbol.toStringTag &&
+							Object.defineProperty(e, Symbol.toStringTag, { value: 'Module' }),
+							Object.defineProperty(e, '__esModule', { value: !0 })
+					}),
+					(l.t = function (e, t) {
+						if ((1 & t && (e = l(e)), 8 & t)) return e
+						if (4 & t && 'object' == typeof e && e && e.__esModule) return e
+						var r = Object.create(null)
+						if (
+							(l.r(r),
+							Object.defineProperty(r, 'default', { enumerable: !0, value: e }),
+							2 & t && 'string' != typeof e)
+						)
+							for (var n in e)
+								l.d(
+									r,
+									n,
+									function (t) {
+										return e[t]
+									}.bind(null, n)
+								)
+						return r
+					}),
+					(l.n = function (e) {
+						var t =
+							e && e.__esModule
+								? function () {
+										return e.default
+								  }
+								: function () {
+										return e
+								  }
+						return l.d(t, 'a', t), t
+					}),
+					(l.o = function (e, t) {
+						return Object.prototype.hasOwnProperty.call(e, t)
+					}),
+					(l.p = '/')
+				var i = (this['webpackJsonpreact-lit-elements'] =
+						this['webpackJsonpreact-lit-elements'] || []),
+					a = i.push.bind(i)
+				;(i.push = t), (i = i.slice())
+				for (var f = 0; f < i.length; f++) t(i[f])
+				var c = a
+				r()
+			})([])
+		</script>
+		<script src="/static/js/2.419853b1.chunk.js"></script>
+		<script src="/static/js/main.b3a014b0.chunk.js"></script>
+	</body>
+</html>
