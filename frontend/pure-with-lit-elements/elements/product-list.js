@@ -8,21 +8,27 @@ class ProductList extends LitElement {
 			toggleText: { type: String, attribute: false },
 			displayedProducts: { type: Array, attribute: false },
 			short: { type: Boolean, attribute: false },
-			products: { type: String },
+			products: { type: String, attribute: false },
+			url: { type: String },
 		}
 	}
 
 	constructor() {
 		super()
 		this.expanding = false
-		this.products = "[]"
+		this.products = ''
 	}
 
 	connectedCallback() {
 		super.connectedCallback()
+
 		if (this.expanding) {
 			this.handleToggle(this.expanding)
 		}
+
+		fetch(this.url)
+			.then((res) => res.json())
+			.then((body) => (this.products = JSON.stringify(body)))
 
 		document.addEventListener('container:trigger', () => {
 			this.message = 'You pressed the button in the container application.'
@@ -41,16 +47,22 @@ class ProductList extends LitElement {
 		document.dispatchEvent(
 			new CustomEvent('products:trigger', {
 				detail: {
-					amount: JSON.parse(this.products).length,
+					amount: JSON.parse(this.displayedProducts).length,
 				},
 			})
 		)
 	}
 
+	randomEvent() {
+		let lister = document.getElementsByTagName('product-list')[0]
+		let updated = JSON.parse(this.products)
+		updated[5000].name = 'Random ' + Math.round(Math.random() * 100)
+		this.products = JSON.stringify(updated)
+	}
+
 	render() {
 		console.log('render list')
-		return html` 
-			<style>
+		return html` <style>
 				p,
 				button {
 					font-size: 1.25rem;
@@ -61,6 +73,7 @@ class ProductList extends LitElement {
 					text-decoration: underline;
 					color: var(--primary);
 					border: none;
+					background: white;
 				}
 
 				button:focus {
@@ -109,11 +122,13 @@ class ProductList extends LitElement {
 			<div class="product-list">
 				<div class="header">
 					<h1>This list contains all products:</h1>
-					${this.expanding
-						? html`<button @click="${() => this.handleToggle(!this.short)}">
-								${this.toggleText}
-						  </button>`
-						: null}
+					${
+						this.expanding
+							? html`<button @click="${() => this.handleToggle(!this.short)}">
+									${this.toggleText}
+							  </button>`
+							: null
+					}
 				</div>
 				<p id="responder">${this.message}</p>
 				<p></p>
@@ -121,43 +136,54 @@ class ProductList extends LitElement {
 					Click <button @click="${this.dispatchEvent}">here</button> to communicate with
 					the micro frontend.
 				</p>
-				${JSON.parse(this.products).length
-					? html`
-							<div id="products">
-								${JSON.parse(this.products)
-									.slice(
-										0,
-										this.short
-											? JSON.parse(this.products).length < 3
-												? JSON.parse(this.products).length
-												: 3
-											: JSON.parse(this.products).length
-									)
-									.map(
-										(p) => html`
-											<product-element alt="${'Image of a ' + p.name}">
-												<span slot="name">${p.name}</span>
-												<span slot="description">${p.description}</span>
-												<span slot="price">${p.price.toFixed(2)}</span>
-											</product-element>
-										`
-									)}
-							</div>
-					  `
-					: null}
+				<p>
+					Click
+					<button  @click="${this.randomEvent}"">here</button>
+					to change the productlist that gets passed down.
+				</p>
+				${
+					JSON.parse(this.products).length
+						? html`
+								<div id="products">
+									${JSON.parse(this.products)
+										.slice(
+											0,
+											this.short
+												? JSON.parse(this.products).length < 3
+													? JSON.parse(this.products).length
+													: 3
+												: JSON.parse(this.products).length
+										)
+										.map(
+											(p) => html`
+												<product-element alt="${'Image of a ' + p.name}">
+													<span slot="name">${p.name}</span>
+													<span slot="description">${p.description}</span>
+													<span slot="price">${p.price.toFixed(2)}</span>
+												</product-element>
+											`
+										)}
+								</div>
+						  `
+						: null
+				}
 				${!JSON.parse(this.products.length) ? html`<p>No products found...</p>` : null}
-				${JSON.parse(this.products.length)
-					? html`<p class="credit">
-							Icons made by
-							<a href="https://www.flaticon.com/authors/icongeek26" title="Icongeek26"
-								>Icongeek26</a
-							>
-							from
-							<a href="https://www.flaticon.com/" title="Flaticon"
-								>www.flaticon.com</a
-							>
-					  </p>`
-					: null}
+				${
+					JSON.parse(this.products.length)
+						? html`<p class="credit">
+								Icons made by
+								<a
+									href="https://www.flaticon.com/authors/icongeek26"
+									title="Icongeek26"
+									>Icongeek26</a
+								>
+								from
+								<a href="https://www.flaticon.com/" title="Flaticon"
+									>www.flaticon.com</a
+								>
+						  </p>`
+						: null
+				}
 			</div>`
 	}
 
