@@ -4,7 +4,7 @@ import 'micro-frontend-poc-delaware-ugent'
 
 function ProductList(props){
     return (
-        <product-list expanding products={JSON.stringify(props.products)} ></product-list>
+        <product-list expanding url={props.url}></product-list>
     )
 }
 

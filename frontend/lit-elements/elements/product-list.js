@@ -16,7 +16,7 @@ class ProductList extends LitElement {
 	constructor() {
 		super()
 		this.expanding = false
-		this.products = ''
+		this.products = '[]'
 	}
 
 	connectedCallback() {
@@ -47,7 +47,7 @@ class ProductList extends LitElement {
 		document.dispatchEvent(
 			new CustomEvent('products:trigger', {
 				detail: {
-					amount: this.products.length,
+					amount: JSON.parse(this.products).length,
 				},
 			})
 		)
@@ -55,7 +55,7 @@ class ProductList extends LitElement {
 
 	randomEvent() {
 		let updated = JSON.parse(this.products)
-		updated[5000].name = 'Random ' + Math.round(Math.random() * 100)
+		updated[0].name = 'Random ' + Math.round(Math.random() * 100)
 		this.products = JSON.stringify(updated)
 	}
 

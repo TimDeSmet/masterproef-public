@@ -19,7 +19,6 @@ class ProductList extends HTMLElement {
 	}
 	
 	populateList(){
-		console.log(this.getAttribute('products'))
 		let product_list = JSON.parse(this.getAttribute('products'))
 		if(this.hasAttribute('expanding')){
 			product_list = this.hasAttribute('short') ? JSON.parse(this.getAttribute('products')).slice(0,3) : JSON.parse(this.getAttribute('products'))
@@ -47,7 +46,6 @@ class ProductList extends HTMLElement {
 	}
 
     connectedCallback() {
-		console.log('ok')
 		this.render()
 		this.hasAttribute('expanding') && this.makeExpandable()
 		this.populateList()
@@ -80,6 +78,7 @@ class ProductList extends HTMLElement {
 					text-decoration: underline;
 					color: var(--primary);
 					border: none;
+					background: white;
 				}
 
 				button:focus {

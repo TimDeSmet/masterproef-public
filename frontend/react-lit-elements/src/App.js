@@ -1,24 +1,14 @@
 import React, { useEffect, useState } from 'react'
-import fetch from 'node-fetch'
 import './App.css'
 
 import ProductList from './components/ProductList'
 
-const background = require('./assets/bg.png') 
-// const url = 'http://gateway:2003/products/performance'
-const url = 'http://gateway:2003/products/normal'
+const background = require('./assets/bg.png')
 
 function App() {
 	const [message, setMessage] = useState(null)
-	const [products, setProducts] = useState([])
 
 	useEffect(() => {
-		fetch(url)
-			.then((res) => res.json())
-			.then((body) => {
-				setProducts(body)
-			})
-
 		document.addEventListener('products:trigger', (event) => {
 			setMessage(
 				`Received a message from the micro frontend: ${event.detail.amount} products are displayed`
@@ -63,21 +53,8 @@ function App() {
 				</button>{' '}
 				to communicate with the micro frontend.
 			</p>
-			<p>
-				Click{' '}
-				<button
-					onClick={() => {
-						let updated = [...products]
-						updated[0].name = 'Random ' + Math.round(Math.random() * 100)
-						setProducts(updated)
-					}}
-				>
-					here
-				</button>{' '}
-				to change the productlist that gets passed down.
-			</p>
 			{message && <p className="landing-text">{message}</p>}
-			<ProductList products={products}></ProductList>
+			<ProductList url="http://gateway:2003/products/normal"></ProductList>
 			<img className="bg-image" src={background} alt="background hexagonal shapes"></img>
 		</div>
 	)

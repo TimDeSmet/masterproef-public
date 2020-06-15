@@ -26,7 +26,7 @@ const i="undefined"!=typeof window&&null!=window.customElements&&void 0!==window
  * subject to an additional IP rights grant found at
  * http://polymer.github.io/PATENTS.txt
  */
-const y=new WeakMap,m=t=>"function"==typeof t&&y.has(t),g={},N={};
+const m=new WeakMap,y=t=>"function"==typeof t&&m.has(t),g={},N={};
 /**
  * @license
  * Copyright (c) 2017 The Polymer Project Authors. All rights reserved.
@@ -67,7 +67,7 @@ class f{constructor(t,e,s){this.__parts=[],this.template=t,this.processor=e,this
  * subject to an additional IP rights grant found at
  * http://polymer.github.io/PATENTS.txt
  */
-const S=t=>null===t||!("object"==typeof t||"function"==typeof t),D=t=>Array.isArray(t)||!(!t||!t[Symbol.iterator]);class T{constructor(t,e,s){this.dirty=!0,this.element=t,this.name=e,this.strings=s,this.parts=[];for(let t=0;t<s.length-1;t++)this.parts[t]=this._createPart()}_createPart(){return new v(this)}_getValue(){const t=this.strings,e=t.length-1;let s="";for(let i=0;i<e;i++){s+=t[i];const e=this.parts[i];if(void 0!==e){const t=e.value;if(S(t)||!D(t))s+="string"==typeof t?t:String(t);else for(const e of t)s+="string"==typeof e?e:String(e)}}return s+=t[e],s}commit(){this.dirty&&(this.dirty=!1,this.element.setAttribute(this.name,this._getValue()))}}class v{constructor(t){this.value=void 0,this.committer=t}setValue(t){t===g||S(t)&&t===this.value||(this.value=t,m(t)||(this.committer.dirty=!0))}commit(){for(;m(this.value);){const t=this.value;this.value=g,t(this)}this.value!==g&&this.committer.commit()}}class x{constructor(t){this.value=void 0,this.__pendingValue=void 0,this.options=t}appendInto(t){this.startNode=t.appendChild(p()),this.endNode=t.appendChild(p())}insertAfterNode(t){this.startNode=t,this.endNode=t.nextSibling}appendIntoPart(t){t.__insert(this.startNode=p()),t.__insert(this.endNode=p())}insertAfterPart(t){t.__insert(this.startNode=p()),this.endNode=t.endNode,t.endNode=this.startNode}setValue(t){this.__pendingValue=t}commit(){if(null===this.startNode.parentNode)return;for(;m(this.__pendingValue);){const t=this.__pendingValue;this.__pendingValue=g,t(this)}const t=this.__pendingValue;t!==g&&(S(t)?t!==this.value&&this.__commitText(t):t instanceof L?this.__commitTemplateResult(t):t instanceof Node?this.__commitNode(t):D(t)?this.__commitIterable(t):t===N?(this.value=N,this.clear()):this.__commitText(t))}__insert(t){this.endNode.parentNode.insertBefore(t,this.endNode)}__commitNode(t){this.value!==t&&(this.clear(),this.__insert(t),this.value=t)}__commitText(t){const e=this.startNode.nextSibling,s="string"==typeof(t=null==t?"":t)?t:String(t);e===this.endNode.previousSibling&&3===e.nodeType?e.data=s:this.__commitNode(document.createTextNode(s)),this.value=t}__commitTemplateResult(t){const e=this.options.templateFactory(t);if(this.value instanceof f&&this.value.template===e)this.value.update(t.values);else{const s=new f(e,t.processor,this.options),i=s._clone();s.update(t.values),this.__commitNode(i),this.value=s}}__commitIterable(t){Array.isArray(this.value)||(this.value=[],this.clear());const e=this.value;let s,i=0;for(const n of t)s=e[i],void 0===s&&(s=new x(this.options),e.push(s),0===i?s.appendIntoPart(this):s.insertAfterPart(e[i-1])),s.setValue(n),s.commit(),i++;i<e.length&&(e.length=i,this.clear(s&&s.endNode))}clear(t=this.startNode){n(this.startNode.parentNode,t.nextSibling,this.endNode)}}class j{constructor(t,e,s){if(this.value=void 0,this.__pendingValue=void 0,2!==s.length||""!==s[0]||""!==s[1])throw new Error("Boolean attributes can only contain a single expression");this.element=t,this.name=e,this.strings=s}setValue(t){this.__pendingValue=t}commit(){for(;m(this.__pendingValue);){const t=this.__pendingValue;this.__pendingValue=g,t(this)}if(this.__pendingValue===g)return;const t=!!this.__pendingValue;this.value!==t&&(t?this.element.setAttribute(this.name,""):this.element.removeAttribute(this.name),this.value=t),this.__pendingValue=g}}class C extends T{constructor(t,e,s){super(t,e,s),this.single=2===s.length&&""===s[0]&&""===s[1]}_createPart(){return new b(this)}_getValue(){return this.single?this.parts[0].value:super._getValue()}commit(){this.dirty&&(this.dirty=!1,this.element[this.name]=this._getValue())}}class b extends v{}let A=!1;(()=>{try{const t={get capture(){return A=!0,!1}};window.addEventListener("test",t,t),window.removeEventListener("test",t,t)}catch(t){}})();class z{constructor(t,e,s){this.value=void 0,this.__pendingValue=void 0,this.element=t,this.eventName=e,this.eventContext=s,this.__boundHandleEvent=t=>this.handleEvent(t)}setValue(t){this.__pendingValue=t}commit(){for(;m(this.__pendingValue);){const t=this.__pendingValue;this.__pendingValue=g,t(this)}if(this.__pendingValue===g)return;const t=this.__pendingValue,e=this.value,s=null==t||null!=e&&(t.capture!==e.capture||t.once!==e.once||t.passive!==e.passive),i=null!=t&&(null==e||s);s&&this.element.removeEventListener(this.eventName,this.__boundHandleEvent,this.__options),i&&(this.__options=E(t),this.element.addEventListener(this.eventName,this.__boundHandleEvent,this.__options)),this.value=t,this.__pendingValue=g}handleEvent(t){"function"==typeof this.value?this.value.call(this.eventContext||this.element,t):this.value.handleEvent(t)}}const E=t=>t&&(A?{capture:t.capture,passive:t.passive,once:t.once}:t.capture)
+const S=t=>null===t||!("object"==typeof t||"function"==typeof t),D=t=>Array.isArray(t)||!(!t||!t[Symbol.iterator]);class v{constructor(t,e,s){this.dirty=!0,this.element=t,this.name=e,this.strings=s,this.parts=[];for(let t=0;t<s.length-1;t++)this.parts[t]=this._createPart()}_createPart(){return new T(this)}_getValue(){const t=this.strings,e=t.length-1;let s="";for(let i=0;i<e;i++){s+=t[i];const e=this.parts[i];if(void 0!==e){const t=e.value;if(S(t)||!D(t))s+="string"==typeof t?t:String(t);else for(const e of t)s+="string"==typeof e?e:String(e)}}return s+=t[e],s}commit(){this.dirty&&(this.dirty=!1,this.element.setAttribute(this.name,this._getValue()))}}class T{constructor(t){this.value=void 0,this.committer=t}setValue(t){t===g||S(t)&&t===this.value||(this.value=t,y(t)||(this.committer.dirty=!0))}commit(){for(;y(this.value);){const t=this.value;this.value=g,t(this)}this.value!==g&&this.committer.commit()}}class x{constructor(t){this.value=void 0,this.__pendingValue=void 0,this.options=t}appendInto(t){this.startNode=t.appendChild(p()),this.endNode=t.appendChild(p())}insertAfterNode(t){this.startNode=t,this.endNode=t.nextSibling}appendIntoPart(t){t.__insert(this.startNode=p()),t.__insert(this.endNode=p())}insertAfterPart(t){t.__insert(this.startNode=p()),this.endNode=t.endNode,t.endNode=this.startNode}setValue(t){this.__pendingValue=t}commit(){if(null===this.startNode.parentNode)return;for(;y(this.__pendingValue);){const t=this.__pendingValue;this.__pendingValue=g,t(this)}const t=this.__pendingValue;t!==g&&(S(t)?t!==this.value&&this.__commitText(t):t instanceof L?this.__commitTemplateResult(t):t instanceof Node?this.__commitNode(t):D(t)?this.__commitIterable(t):t===N?(this.value=N,this.clear()):this.__commitText(t))}__insert(t){this.endNode.parentNode.insertBefore(t,this.endNode)}__commitNode(t){this.value!==t&&(this.clear(),this.__insert(t),this.value=t)}__commitText(t){const e=this.startNode.nextSibling,s="string"==typeof(t=null==t?"":t)?t:String(t);e===this.endNode.previousSibling&&3===e.nodeType?e.data=s:this.__commitNode(document.createTextNode(s)),this.value=t}__commitTemplateResult(t){const e=this.options.templateFactory(t);if(this.value instanceof f&&this.value.template===e)this.value.update(t.values);else{const s=new f(e,t.processor,this.options),i=s._clone();s.update(t.values),this.__commitNode(i),this.value=s}}__commitIterable(t){Array.isArray(this.value)||(this.value=[],this.clear());const e=this.value;let s,i=0;for(const n of t)s=e[i],void 0===s&&(s=new x(this.options),e.push(s),0===i?s.appendIntoPart(this):s.insertAfterPart(e[i-1])),s.setValue(n),s.commit(),i++;i<e.length&&(e.length=i,this.clear(s&&s.endNode))}clear(t=this.startNode){n(this.startNode.parentNode,t.nextSibling,this.endNode)}}class j{constructor(t,e,s){if(this.value=void 0,this.__pendingValue=void 0,2!==s.length||""!==s[0]||""!==s[1])throw new Error("Boolean attributes can only contain a single expression");this.element=t,this.name=e,this.strings=s}setValue(t){this.__pendingValue=t}commit(){for(;y(this.__pendingValue);){const t=this.__pendingValue;this.__pendingValue=g,t(this)}if(this.__pendingValue===g)return;const t=!!this.__pendingValue;this.value!==t&&(t?this.element.setAttribute(this.name,""):this.element.removeAttribute(this.name),this.value=t),this.__pendingValue=g}}class C extends v{constructor(t,e,s){super(t,e,s),this.single=2===s.length&&""===s[0]&&""===s[1]}_createPart(){return new b(this)}_getValue(){return this.single?this.parts[0].value:super._getValue()}commit(){this.dirty&&(this.dirty=!1,this.element[this.name]=this._getValue())}}class b extends T{}let A=!1;(()=>{try{const t={get capture(){return A=!0,!1}};window.addEventListener("test",t,t),window.removeEventListener("test",t,t)}catch(t){}})();class z{constructor(t,e,s){this.value=void 0,this.__pendingValue=void 0,this.element=t,this.eventName=e,this.eventContext=s,this.__boundHandleEvent=t=>this.handleEvent(t)}setValue(t){this.__pendingValue=t}commit(){for(;y(this.__pendingValue);){const t=this.__pendingValue;this.__pendingValue=g,t(this)}if(this.__pendingValue===g)return;const t=this.__pendingValue,e=this.value,s=null==t||null!=e&&(t.capture!==e.capture||t.once!==e.once||t.passive!==e.passive),i=null!=t&&(null==e||s);s&&this.element.removeEventListener(this.eventName,this.__boundHandleEvent,this.__options),i&&(this.__options=E(t),this.element.addEventListener(this.eventName,this.__boundHandleEvent,this.__options)),this.value=t,this.__pendingValue=g}handleEvent(t){"function"==typeof this.value?this.value.call(this.eventContext||this.element,t):this.value.handleEvent(t)}}const E=t=>t&&(A?{capture:t.capture,passive:t.passive,once:t.once}:t.capture)
 /**
  * @license
  * Copyright (c) 2017 The Polymer Project Authors. All rights reserved.
@@ -107,7 +107,7 @@ const S=t=>null===t||!("object"==typeof t||"function"==typeof t),D=t=>Array.isAr
  * subject to an additional IP rights grant found at
  * http://polymer.github.io/PATENTS.txt
  */
-class{handleAttributeExpressions(t,e,s,i){const n=e[0];if("."===n){return new C(t,e.slice(1),s).parts}return"@"===n?[new z(t,e.slice(1),i.eventContext)]:"?"===n?[new j(t,e.slice(1),s)]:new T(t,e,s).parts}handleTextExpression(t){return new x(t)}};
+class{handleAttributeExpressions(t,e,s,i){const n=e[0];if("."===n){return new C(t,e.slice(1),s).parts}return"@"===n?[new z(t,e.slice(1),i.eventContext)]:"?"===n?[new j(t,e.slice(1),s)]:new v(t,e,s).parts}handleTextExpression(t){return new x(t)}};
 /**
  * @license
  * Copyright (c) 2017 The Polymer Project Authors. All rights reserved.
@@ -156,14 +156,13 @@ const q="adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.pro
 					margin-top: 2rem;
 				}
 			</style>
-            <div class="mf-poc-product">
-                <img class="mf-poc-product-image" src=${"data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiIgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiPjx0aXRsZT5Db21tZXJjaWFsIGRlbGl2ZXJ5IDwvdGl0bGU+PHBhdGggZD0iTTQ3Mi45MTYsMjI0SDQ0OC4wMDdhMjQuNTM0LDI0LjUzNCwwLDAsMC0yMy40MTctMThIMzk4VjE0MC45NzZhNi44Niw2Ljg2LDAsMCwwLTMuMzQ2LTYuMDYyTDIwNy4wNzcsMjYuNTcyYTYuOTI3LDYuOTI3LDAsMCwwLTYuOTYyLDBMMTIuNDgsMTM0LjkxNEE2Ljk4MSw2Ljk4MSwwLDAsMCw5LDE0MC45NzZWMzU3LjY2MWE3LDcsMCwwLDAsMy41LDYuMDYyTDIwMC4xNTQsNDcyLjA2NWE3LDcsMCwwLDAsMy41LjkzOCw3LjM2MSw3LjM2MSwwLDAsMCwzLjYtLjkzOEwzMDYsNDE1LjEwOHY0MS4xNzRBMjkuNjQyLDI5LjY0MiwwLDAsMCwzMzUuODkxLDQ4Nkg0NzIuOTE2QTI5LjgwNywyOS44MDcsMCwwLDAsNTAzLDQ1Ni4yODJ2LTIwMi4xQTMwLjIsMzAuMiwwLDAsMCw0NzIuOTE2LDIyNFptLTQ4LjA3Ny00QTEwLjE2MSwxMC4xNjEsMCwwLDEsNDM1LDIzMC4xNjF2LjY3OEExMC4xNjEsMTAuMTYxLDAsMCwxLDQyNC44MzksMjQxSDM4NC4xNjFBMTAuMTYxLDEwLjE2MSwwLDAsMSwzNzQsMjMwLjgzOXYtLjY3OEExMC4xNjEsMTAuMTYxLDAsMCwxLDM4NC4xNjEsMjIwWk0yMDMuNjU0LDQwLjcxN2w3Ny45NzQsNDUuMDE4TDEwNy45ODYsMTg1Ljk4NywzMC4wMTMsMTQwLjk2OVpNMTk3LDQ1My44NzgsMjMsMzUzLjYxOVYxNTMuMDg1TDE5NywyNTMuMzQ0Wm02LjY1NC0yMTIuNjU4LTgxLjY2OC00Ny4xNTFMMjk1LjYyOCw5My44MTgsMzc3LjMsMTQwLjk2OVpNMzA2LDI1NC4xODJWMzk4Ljk0M2wtOTUsNTQuOTM1VjI1My4zNDRMMzg0LDE1My4wODVWMjA2aC4yMTdBMjQuNTMzLDI0LjUzMywwLDAsMCwzNjAuOCwyMjRIMzM1Ljg5MUEzMC4wMzcsMzAuMDM3LDAsMCwwLDMwNiwyNTQuMTgyWm0xODMsMjAyLjFBMTUuNzkzLDE1Ljc5MywwLDAsMSw0NzIuOTE2LDQ3MkgzMzUuODkxQTE1LjYyOCwxNS42MjgsMCwwLDEsMzIwLDQ1Ni4yODJ2LTIwMi4xQTE2LjAyMiwxNi4wMjIsMCwwLDEsMzM1Ljg5MSwyMzhoMjUuMTgyYTIzLjk0NCwyMy45NDQsMCwwLDAsMjMuMTQ0LDE3SDQyNC41OWEyMy45NDIsMjMuOTQyLDAsMCwwLDIzLjE0My0xN2gyNS4xODNBMTYuMTg2LDE2LjE4NiwwLDAsMSw0ODksMjU0LjE4MloiLz48cGF0aCBkPSJNMzQzLjk0OSwzMjVoNy4zMjdhNyw3LDAsMSwwLDAtMTRIMzUxVjI5MmgxOS4zMDdhNi43MzksNi43MzksMCwwLDAsNi42NTUsNC43MjdBNy4wMTksNy4wMTksMCwwLDAsMzg0LDI4OS43NDN2LTQuNzFBNy4wOTMsNy4wOTMsMCwwLDAsMzc2LjkyNCwyNzhIMzQzLjk0OUE2Ljk4NSw2Ljk4NSwwLDAsMCwzMzcsMjg1LjAzM3YzMi45NzVBNi45NSw2Ljk1LDAsMCwwLDM0My45NDksMzI1WiIvPjxwYXRoIGQ9Ik0zNDQsMzg5aDMzYTcsNywwLDAsMCw3LTdWMzQ5YTcsNywwLDAsMC03LTdIMzQ0YTcsNywwLDAsMC03LDd2MzNBNyw3LDAsMCwwLDM0NCwzODlabTctMzNoMTl2MTlIMzUxWiIvPjxwYXRoIGQ9Ik0zNTEuMjc3LDQzOUgzNTFWNDIwaDE4LjkyOWE3LjAzNyw3LjAzNywwLDAsMCwxNC4wNzEuMDE0di02Ljc0NUE3LjMsNy4zLDAsMCwwLDM3Ni45MjQsNDA2SDM0My45NDlBNy4xOTEsNy4xOTEsMCwwLDAsMzM3LDQxMy4yNjl2MzIuOTc1QTYuNzUyLDYuNzUyLDAsMCwwLDM0My45NDksNDUzaDcuMzI4YTcsNywwLDEsMCwwLTE0WiIvPjxwYXRoIGQ9Ik0zOTMuMDQxLDI4Ni41OTJsLTIwLjUsMjAuNS02LjIzNi02LjIzN2E3LDcsMCwxLDAtOS45LDkuOWwxMS4xODcsMTEuMTg2YTcsNywwLDAsMCw5LjksMGwyNS40NTItMjUuNDUyYTcsNywwLDAsMC05LjktOS45WiIvPjxwYXRoIGQ9Ik0zOTMuMDQxLDQxNS44NDFsLTIwLjUsMjAuNS02LjIzNi02LjIzN2E3LDcsMCwxLDAtOS45LDkuOWwxMS4xODcsMTEuMTg2YTcsNywwLDAsMCw5LjksMGwyNS40NTItMjUuNDUyYTcsNywwLDAsMC05LjktOS45WiIvPjxwYXRoIGQ9Ik00NjQuODU3LDI5NUg0MjAuODkxYTcsNywwLDAsMCwwLDE0aDQzLjk2NmE3LDcsMCwwLDAsMC0xNFoiLz48cGF0aCBkPSJNNDY0Ljg1NywzNTlINDIwLjg5MWE3LDcsMCwwLDAsMCwxNGg0My45NjZhNyw3LDAsMCwwLDAtMTRaIi8+PHBhdGggZD0iTTQ2NC44NTcsNDIzSDQyMC44OTFhNyw3LDAsMCwwLDAsMTRoNDMuOTY2YTcsNywwLDAsMCwwLTE0WiIvPjwvc3ZnPgo="} alt='${this.alt}'></img>
+			<div class="mf-poc-product">
+				<img class="mf-poc-product-image" src=${"data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiIgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiPjx0aXRsZT5Db21tZXJjaWFsIGRlbGl2ZXJ5IDwvdGl0bGU+PHBhdGggZD0iTTQ3Mi45MTYsMjI0SDQ0OC4wMDdhMjQuNTM0LDI0LjUzNCwwLDAsMC0yMy40MTctMThIMzk4VjE0MC45NzZhNi44Niw2Ljg2LDAsMCwwLTMuMzQ2LTYuMDYyTDIwNy4wNzcsMjYuNTcyYTYuOTI3LDYuOTI3LDAsMCwwLTYuOTYyLDBMMTIuNDgsMTM0LjkxNEE2Ljk4MSw2Ljk4MSwwLDAsMCw5LDE0MC45NzZWMzU3LjY2MWE3LDcsMCwwLDAsMy41LDYuMDYyTDIwMC4xNTQsNDcyLjA2NWE3LDcsMCwwLDAsMy41LjkzOCw3LjM2MSw3LjM2MSwwLDAsMCwzLjYtLjkzOEwzMDYsNDE1LjEwOHY0MS4xNzRBMjkuNjQyLDI5LjY0MiwwLDAsMCwzMzUuODkxLDQ4Nkg0NzIuOTE2QTI5LjgwNywyOS44MDcsMCwwLDAsNTAzLDQ1Ni4yODJ2LTIwMi4xQTMwLjIsMzAuMiwwLDAsMCw0NzIuOTE2LDIyNFptLTQ4LjA3Ny00QTEwLjE2MSwxMC4xNjEsMCwwLDEsNDM1LDIzMC4xNjF2LjY3OEExMC4xNjEsMTAuMTYxLDAsMCwxLDQyNC44MzksMjQxSDM4NC4xNjFBMTAuMTYxLDEwLjE2MSwwLDAsMSwzNzQsMjMwLjgzOXYtLjY3OEExMC4xNjEsMTAuMTYxLDAsMCwxLDM4NC4xNjEsMjIwWk0yMDMuNjU0LDQwLjcxN2w3Ny45NzQsNDUuMDE4TDEwNy45ODYsMTg1Ljk4NywzMC4wMTMsMTQwLjk2OVpNMTk3LDQ1My44NzgsMjMsMzUzLjYxOVYxNTMuMDg1TDE5NywyNTMuMzQ0Wm02LjY1NC0yMTIuNjU4LTgxLjY2OC00Ny4xNTFMMjk1LjYyOCw5My44MTgsMzc3LjMsMTQwLjk2OVpNMzA2LDI1NC4xODJWMzk4Ljk0M2wtOTUsNTQuOTM1VjI1My4zNDRMMzg0LDE1My4wODVWMjA2aC4yMTdBMjQuNTMzLDI0LjUzMywwLDAsMCwzNjAuOCwyMjRIMzM1Ljg5MUEzMC4wMzcsMzAuMDM3LDAsMCwwLDMwNiwyNTQuMTgyWm0xODMsMjAyLjFBMTUuNzkzLDE1Ljc5MywwLDAsMSw0NzIuOTE2LDQ3MkgzMzUuODkxQTE1LjYyOCwxNS42MjgsMCwwLDEsMzIwLDQ1Ni4yODJ2LTIwMi4xQTE2LjAyMiwxNi4wMjIsMCwwLDEsMzM1Ljg5MSwyMzhoMjUuMTgyYTIzLjk0NCwyMy45NDQsMCwwLDAsMjMuMTQ0LDE3SDQyNC41OWEyMy45NDIsMjMuOTQyLDAsMCwwLDIzLjE0My0xN2gyNS4xODNBMTYuMTg2LDE2LjE4NiwwLDAsMSw0ODksMjU0LjE4MloiLz48cGF0aCBkPSJNMzQzLjk0OSwzMjVoNy4zMjdhNyw3LDAsMSwwLDAtMTRIMzUxVjI5MmgxOS4zMDdhNi43MzksNi43MzksMCwwLDAsNi42NTUsNC43MjdBNy4wMTksNy4wMTksMCwwLDAsMzg0LDI4OS43NDN2LTQuNzFBNy4wOTMsNy4wOTMsMCwwLDAsMzc2LjkyNCwyNzhIMzQzLjk0OUE2Ljk4NSw2Ljk4NSwwLDAsMCwzMzcsMjg1LjAzM3YzMi45NzVBNi45NSw2Ljk1LDAsMCwwLDM0My45NDksMzI1WiIvPjxwYXRoIGQ9Ik0zNDQsMzg5aDMzYTcsNywwLDAsMCw3LTdWMzQ5YTcsNywwLDAsMC03LTdIMzQ0YTcsNywwLDAsMC03LDd2MzNBNyw3LDAsMCwwLDM0NCwzODlabTctMzNoMTl2MTlIMzUxWiIvPjxwYXRoIGQ9Ik0zNTEuMjc3LDQzOUgzNTFWNDIwaDE4LjkyOWE3LjAzNyw3LjAzNywwLDAsMCwxNC4wNzEuMDE0di02Ljc0NUE3LjMsNy4zLDAsMCwwLDM3Ni45MjQsNDA2SDM0My45NDlBNy4xOTEsNy4xOTEsMCwwLDAsMzM3LDQxMy4yNjl2MzIuOTc1QTYuNzUyLDYuNzUyLDAsMCwwLDM0My45NDksNDUzaDcuMzI4YTcsNywwLDEsMCwwLTE0WiIvPjxwYXRoIGQ9Ik0zOTMuMDQxLDI4Ni41OTJsLTIwLjUsMjAuNS02LjIzNi02LjIzN2E3LDcsMCwxLDAtOS45LDkuOWwxMS4xODcsMTEuMTg2YTcsNywwLDAsMCw5LjksMGwyNS40NTItMjUuNDUyYTcsNywwLDAsMC05LjktOS45WiIvPjxwYXRoIGQ9Ik0zOTMuMDQxLDQxNS44NDFsLTIwLjUsMjAuNS02LjIzNi02LjIzN2E3LDcsMCwxLDAtOS45LDkuOWwxMS4xODcsMTEuMTg2YTcsNywwLDAsMCw5LjksMGwyNS40NTItMjUuNDUyYTcsNywwLDAsMC05LjktOS45WiIvPjxwYXRoIGQ9Ik00NjQuODU3LDI5NUg0MjAuODkxYTcsNywwLDAsMCwwLDE0aDQzLjk2NmE3LDcsMCwwLDAsMC0xNFoiLz48cGF0aCBkPSJNNDY0Ljg1NywzNTlINDIwLjg5MWE3LDcsMCwwLDAsMCwxNGg0My45NjZhNyw3LDAsMCwwLDAtMTRaIi8+PHBhdGggZD0iTTQ2NC44NTcsNDIzSDQyMC44OTFhNyw3LDAsMCwwLDAsMTRoNDMuOTY2YTcsNywwLDAsMCwwLTE0WiIvPjwvc3ZnPgo="} alt='${this.alt}'></img>
                 <h1><slot name="name">Default Name</slot></h1>
                 <p><slot name="description">Default Description</slot></p>
                 <p>€ <slot name="price">Default Price</slot></p>
             </div> 
-        `}});customElements.define("product-list",class extends Z{static get properties(){return{expanding:{type:Boolean},message:{type:String,attribute:!1},toggleText:{type:String,attribute:!1},displayedProducts:{type:Array,attribute:!1},short:{type:Boolean,attribute:!1},products:{type:String}}}constructor(){super(),this.expanding=!1,this.products="[]"}connectedCallback(){super.connectedCallback(),this.expanding&&this.handleToggle(this.expanding),document.addEventListener("container:trigger",()=>{this.message="You pressed the button in the container application.",setTimeout(()=>{this.message=""},3e3)})}handleToggle(t){this.short=t,this.toggleText=(t?"Expand":"Collapse")+" list"}dispatchEvent(){document.dispatchEvent(new CustomEvent("products:trigger",{detail:{amount:JSON.parse(this.products).length}}))}render(){return console.log("render list"),U` 
-			<style>
+        `}});customElements.define("product-list",class extends Z{static get properties(){return{expanding:{type:Boolean},message:{type:String,attribute:!1},toggleText:{type:String,attribute:!1},displayedProducts:{type:Array,attribute:!1},short:{type:Boolean,attribute:!1},products:{type:String,attribute:!1},url:{type:String}}}constructor(){super(),this.expanding=!1,this.products="[]"}connectedCallback(){super.connectedCallback(),this.expanding&&this.handleToggle(this.expanding),fetch(this.url).then(t=>t.json()).then(t=>this.products=JSON.stringify(t)),document.addEventListener("container:trigger",()=>{this.message="You pressed the button in the container application.",setTimeout(()=>{this.message=""},3e3)})}handleToggle(t){this.short=t,this.toggleText=(t?"Expand":"Collapse")+" list"}dispatchEvent(){document.dispatchEvent(new CustomEvent("products:trigger",{detail:{amount:JSON.parse(this.products).length}}))}randomEvent(){let t=JSON.parse(this.products);t[0].name="Random "+Math.round(100*Math.random()),this.products=JSON.stringify(t)}render(){return console.log("render list"),U` <style>
 				p,
 				button {
 					font-size: 1.25rem;
@@ -174,6 +173,7 @@ const q="adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.pro
 					text-decoration: underline;
 					color: var(--primary);
 					border: none;
+					background: white;
 				}
 
 				button:focus {
@@ -223,8 +223,8 @@ const q="adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.pro
 				<div class="header">
 					<h1>This list contains all products:</h1>
 					${this.expanding?U`<button @click="${()=>this.handleToggle(!this.short)}">
-								${this.toggleText}
-						  </button>`:null}
+									${this.toggleText}
+							  </button>`:null}
 				</div>
 				<p id="responder">${this.message}</p>
 				<p></p>
@@ -232,26 +232,33 @@ const q="adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.pro
 					Click <button @click="${this.dispatchEvent}">here</button> to communicate with
 					the micro frontend.
 				</p>
+				<p>
+					Click
+					<button  @click="${this.randomEvent}"">here</button>
+					to change the productlist that gets passed down.
+				</p>
 				${JSON.parse(this.products).length?U`
-							<div id="products">
-								${JSON.parse(this.products).slice(0,this.short?JSON.parse(this.products).length<3?JSON.parse(this.products).length:3:JSON.parse(this.products).length).map(t=>U`
-											<product-element alt="${"Image of a "+t.name}">
-												<span slot="name">${t.name}</span>
-												<span slot="description">${t.description}</span>
-												<span slot="price">${t.price.toFixed(2)}</span>
-											</product-element>
-										`)}
-							</div>
-					  `:null}
+								<div id="products">
+									${JSON.parse(this.products).slice(0,this.short?JSON.parse(this.products).length<3?JSON.parse(this.products).length:3:JSON.parse(this.products).length).map(t=>U`
+												<product-element alt="${"Image of a "+t.name}">
+													<span slot="name">${t.name}</span>
+													<span slot="description">${t.description}</span>
+													<span slot="price">${t.price.toFixed(2)}</span>
+												</product-element>
+											`)}
+								</div>
+						  `:null}
 				${JSON.parse(this.products.length)?null:U`<p>No products found...</p>`}
 				${JSON.parse(this.products.length)?U`<p class="credit">
-							Icons made by
-							<a href="https://www.flaticon.com/authors/icongeek26" title="Icongeek26"
-								>Icongeek26</a
-							>
-							from
-							<a href="https://www.flaticon.com/" title="Flaticon"
-								>www.flaticon.com</a
-							>
-					  </p>`:null}
+								Icons made by
+								<a
+									href="https://www.flaticon.com/authors/icongeek26"
+									title="Icongeek26"
+									>Icongeek26</a
+								>
+								from
+								<a href="https://www.flaticon.com/" title="Flaticon"
+									>www.flaticon.com</a
+								>
+						  </p>`:null}
 			</div>`}disconnectedCallback(){document.removeEventListener("container:trigger")}})}]);

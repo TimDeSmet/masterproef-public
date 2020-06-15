@@ -20,7 +20,7 @@
     "@angular/platform-browser-dynamic": "~9.0.7",
     "@angular/router": "~9.0.7",
     "lit-element": "^2.3.1",
-    "micro-frontend-poc-delaware-ugent": "^0.1.2",
+    "micro-frontend-poc-delaware-ugent": "0.2.5",
     "node-fetch": "^2.6.0",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",

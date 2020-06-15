@@ -7,7 +7,7 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "lit-element": "^2.3.1",
-    "micro-frontend-poc-delaware-ugent": "0.1.2",
+    "micro-frontend-poc-delaware-ugent": "0.2.5",
     "node-fetch": "^2.6.0",
     "npm-force-resolutions": "0.0.3",
     "react": "^16.13.1",
